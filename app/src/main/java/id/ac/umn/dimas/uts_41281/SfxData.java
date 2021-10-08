@@ -3,11 +3,14 @@ package id.ac.umn.dimas.uts_41281;
 import java.util.ArrayList;
 
 public class SfxData {
+    private static ArrayList<Sfx> sfxList = new ArrayList<>();
+
     private static String[] sfxNames = {
             "Air Raid",
             "Police Siren",
             "Electric Guitar",
             "Guitar",
+            "Bowling",
     };
 
     private static String[] sfxCategories = {
@@ -15,6 +18,7 @@ public class SfxData {
             "Emergency",
             "Instrument",
             "Instrument",
+            "Sport",
     };
 
     private static int[] sfxSources = {
@@ -22,10 +26,11 @@ public class SfxData {
             R.raw.emergency_police_siren,
             R.raw.instrument_electric_guitar,
             R.raw.instrument_guitar,
+            R.raw.sport_bowling,
     };
 
-    static ArrayList<Sfx> getSfxList() {
-        ArrayList<Sfx> list = new ArrayList<>();
+    static void initialize() {
+        sfxList.clear();
 
         for (int position = 0; position < sfxNames.length; position++) {
             String sfxName = sfxNames[position];
@@ -34,9 +39,11 @@ public class SfxData {
 
             Sfx sfx = new Sfx(sfxName, sfxCategory, sfxSource);
 
-            list.add(sfx);
+            sfxList.add(sfx);
         }
+    }
 
-        return list;
+    static ArrayList<Sfx> getSfxList() {
+        return sfxList;
     }
 }

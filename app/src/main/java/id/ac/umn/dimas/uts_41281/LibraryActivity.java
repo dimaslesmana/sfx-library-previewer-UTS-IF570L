@@ -12,33 +12,29 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 public class LibraryActivity extends AppCompatActivity {
     public static final String EXTRA_NAME = "extra_name";
     private RecyclerView rvSfxList;
-    private ArrayList<Sfx> sfxList = new ArrayList<>();
+    private SfxAdapter sfxAdapter;
+    private String username = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
 
-        String username = getIntent().getStringExtra(EXTRA_NAME);
+        username = getIntent().getStringExtra(EXTRA_NAME);
+        Toast.makeText(this, "Selamat datang, " + username, Toast.LENGTH_SHORT).show();
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setTitle(username);
         }
 
-        Toast.makeText(this, "Selamat datang, " + username, Toast.LENGTH_SHORT).show();
-
-        sfxList.addAll(SfxData.getSfxList());
-
         rvSfxList = findViewById(R.id.rv_library_sfx);
         rvSfxList.setHasFixedSize(true);
 
-        SfxAdapter sfxAdapter = new SfxAdapter(sfxList);
+        sfxAdapter = new SfxAdapter(SfxData.getSfxList());
         rvSfxList.setAdapter(sfxAdapter);
         rvSfxList.setLayoutManager(new LinearLayoutManager(this));
 

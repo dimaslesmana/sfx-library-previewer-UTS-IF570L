@@ -24,6 +24,7 @@ public class SfxDetailsActivity extends AppCompatActivity {
         String sfxName = sfx.getName();
         String sfxCategory = sfx.getCategory();
         int sfxSource = sfx.getSource();
+
         mediaPlayer = MediaPlayer.create(this, sfxSource);
 
         ActionBar actionBar = getSupportActionBar();

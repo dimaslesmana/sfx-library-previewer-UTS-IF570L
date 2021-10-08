@@ -68,6 +68,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:autoLink="web"
+            android:text="https://www.codepolitan.com/" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:autoLink="web"
             android:text="https://stackoverflow.com/" />
 
         <TextView

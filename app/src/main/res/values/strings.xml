@@ -11,6 +11,7 @@
 
     <string name="library_action_profile">Profile</string>
     <string name="library_action_logout">Keluar</string>
+    <string name="library_msg_empty">No SFX found!</string>
 
     <string name="sfx_details_button_play">Play SFX</string>
 
