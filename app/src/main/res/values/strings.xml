@@ -6,8 +6,11 @@
     <string name="main_button_library">Library</string>
 
     <string name="login_title">LOGIN PAGE</string>
-    <string name="login_et_name">Masukkan nama anda</string>
+    <string name="login_et_name_hint">Masukkan nama anda</string>
     <string name="login_button_next">Next</string>
+
+    <string name="library_action_profile">Profile</string>
+    <string name="library_action_logout">Keluar</string>
 
     <string name="sfx_details_button_play">Play SFX</string>
 
